@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar with Dropdown</title>
+    <!-- Linking external CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+
+            <!-- Dropdown under Departments -->
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Departments</a>
+                <div class="dropdown-content">
+                    <a href="#">Computer Engineering</a>
+                    <a href="#">Information Technology</a>
+                    <a href="#">Mechanical Engineering</a>
+                    <a href="#">Electronics Engineering</a>
+                </div>
+            </li>
+
+            <li><a href="#">Admissions</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <div style="padding: 20px;">
+        <h1>Welcome to the College Website</h1>
+        <p>Hover over "Departments" in the navigation bar to see the dropdown menu.</p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,136 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    display: flex;
+    justify-content: center;
+    padding: 40px 16px;
+    min-height: 100vh;
+}
+
+main {
+    background: #fff;
+    border-radius: 8px;
+    padding: 32px;
+    width: 100%;
+    max-width: 520px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 1.6rem;
+    margin-bottom: 24px;
+    color: #1a202c;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.2rem;
+    color: #2d3748;
+    margin-bottom: 12px;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.op-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.op-group label {
+    font-size: 0.9rem;
+    color: #4a5568;
+    min-width: 140px;
+}
+
+.op-group input {
+    flex: 1;
+    padding: 9px 12px;
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    min-width: 120px;
+}
+
+.op-group input:focus {
+    outline: none;
+    border-color: #805ad5;
+}
+
+.op-group button {
+    padding: 9px 16px;
+    background-color: #805ad5;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.op-group button:hover {
+    background-color: #553c9a;
+}
+
+#message {
+    font-size: 0.9rem;
+    min-height: 20px;
+    margin-bottom: 12px;
+    padding: 6px 10px;
+    border-radius: 4px;
+}
+
+#message.found {
+    background-color: #c6f6d5;
+    color: #276749;
+}
+
+#message.not-found {
+    background-color: #fed7d7;
+    color: #9b2c2c;
+}
+
+#message.info {
+    background-color: #ebf8ff;
+    color: #2b6cb0;
+}
+
+#arrayDisplay h2 {
+    margin-bottom: 10px;
+}
+
+#arrayList {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+#arrayList li {
+    padding: 8px 16px;
+    background-color: #e9d8fd;
+    color: #44337a;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    font-weight: bold;
+}
+
+#arrayList li.empty {
+    background-color: #f7fafc;
+    color: #a0aec0;
+    border-radius: 6px;
+    font-weight: normal;
+    padding: 10px 14px;
+}

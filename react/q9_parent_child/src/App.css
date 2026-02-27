@@ -1,0 +1,39 @@
+.app {
+  max-width: 500px;
+  margin: 40px auto;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.parent, .child {
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 15px 0;
+}
+
+.parent {
+  border-color: #2196F3;
+}
+
+.child {
+  border-color: #4CAF50;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.parent button {
+  background: #2196F3;
+}
+
+.child button {
+  background: #4CAF50;
+}

@@ -1,0 +1,44 @@
+/* Light theme styles */
+.app.light {
+  background: #ffffff;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  transition: all 0.3s;
+}
+
+/* Dark theme styles */
+.app.dark {
+  background: #1a1a2e;
+  color: #eee;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  transition: all 0.3s;
+}
+
+button {
+  padding: 12px 30px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.light button {
+  background: #333;
+  color: white;
+}
+
+.dark button {
+  background: #eee;
+  color: #333;
+}

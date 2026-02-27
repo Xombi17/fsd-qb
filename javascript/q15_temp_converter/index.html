@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Q15 - Temperature Converter</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+    <main>
+        <h1>Temperature Converter</h1>
+        <form id="tempForm">
+            <label for="tempValue">Temperature:</label>
+            <input type="number" id="tempValue" placeholder="Enter temperature" step="any" required />
+
+            <fieldset>
+                <legend>Convert:</legend>
+
+                <div>   
+
+                <label>
+                    <input type="radio" name="convType" value="CtoF" checked />
+                    Celsius → Fahrenheit
+                </label>
+
+                </div>
+
+                <div>   
+                <label>
+                    <input type="radio" name="convType" value="FtoC" />
+                    Fahrenheit → Celsius
+                </label>
+                </div>
+            </fieldset>
+
+            <button type="submit">Convert</button>
+        </form>
+        <p id="result"></p>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>

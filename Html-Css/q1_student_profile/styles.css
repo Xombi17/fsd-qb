@@ -1,0 +1,51 @@
+/* Styling for Student Profile */
+
+body {
+    /* Using required CSS properties: font-family, background-color, margin, padding */
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.profile-container {
+    background-color: white;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 600px;
+    /* required CSS property: border-radius */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Float clearing hack */
+    overflow: hidden;
+}
+
+.profile-photo {
+    /* Profile photo aligned to the left */
+    float: left;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+.profile-details {
+    overflow: hidden;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}

@@ -1,0 +1,116 @@
+/* Styling for College Event Poster */
+
+body {
+    margin: 0;
+    /* Required properties: padding, font-family */
+    padding: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Required property: background-image / gradient */
+    background-image: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.poster-container {
+    background-color: rgba(255, 255, 255, 0.95);
+    width: 600px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    /* Required property: text-align */
+    text-align: center;
+    border: 5px solid #ffcc00;
+}
+
+.poster-header {
+    background-color: #1e3c72;
+    color: white;
+    padding: 20px;
+}
+
+.poster-header h2 {
+    margin: 0 0 5px;
+    font-size: 22px;
+}
+
+.poster-header p {
+    margin: 0;
+    color: #ffcc00;
+    /* Required property: letter-spacing */
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.event-details {
+    padding: 30px;
+}
+
+.event-details h1 {
+    font-size: 48px;
+    color: #d32f2f;
+    margin: 10px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    letter-spacing: 3px;
+}
+
+.tagline {
+    font-size: 20px;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.info-box {
+    background-color: #f8f9fa;
+    border-left: 5px solid #1e3c72;
+    padding: 15px;
+    margin: 20px auto;
+    width: 80%;
+    text-align: left;
+    font-size: 18px;
+}
+
+.info-box span {
+    font-weight: bold;
+    color: #1e3c72;
+    margin-right: 10px;
+}
+
+.info-box p {
+    margin: 10px 0;
+}
+
+.events-list {
+    text-align: left;
+    margin: 30px auto;
+    width: 80%;
+}
+
+.events-list h3 {
+    color: #d32f2f;
+    border-bottom: 2px solid #ffcc00;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.events-list ul {
+    list-style-type: square;
+    color: #333;
+    font-size: 18px;
+    padding-left: 20px;
+}
+
+.events-list li {
+    margin-bottom: 8px;
+}
+
+.poster-footer {
+    background-color: #ffcc00;
+    color: #1e3c72;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 1px;
+}

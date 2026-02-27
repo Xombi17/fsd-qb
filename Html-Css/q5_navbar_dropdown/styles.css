@@ -1,0 +1,73 @@
+/* Styling for Navigation Bar with Dropdown */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Horizontal layout */
+.navbar {
+    /* Required property: background-color */
+    background-color: #333;
+}
+
+.nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links>li {
+    /* Required property: display: inline-block */
+    display: inline-block;
+}
+
+.nav-links>li>a,
+.dropbtn {
+    /* Required property: display: inline-block */
+    display: inline-block;
+    /* Required property: color */
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+/* Required hover property */
+.nav-links>li>a:hover,
+.dropdown:hover .dropbtn {
+    background-color: #4CAF50;
+}
+
+.dropdown {
+    /* Required property: position */
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    /* Required property: position */
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}

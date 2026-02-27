@@ -1,0 +1,57 @@
+/* Styling for Notice Board */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+.notice-board {
+    /* Required properties: border, padding, margin */
+    border: 2px solid #0056b3;
+    padding: 20px;
+    margin: 30px auto;
+    max-width: 600px;
+    background-color: #ffffff;
+    border-radius: 8px;
+}
+
+h1 {
+    /* Required property: color */
+    color: #0056b3;
+    text-align: center;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.notice-list {
+    margin: 20px 0;
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-left: 4px solid #0056b3;
+    background-color: #f1f7fd;
+    transition: background-color 0.3s;
+}
+
+/* Required hover property */
+li:hover {
+    background-color: #e2eff9;
+}
+
+.date {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Highlight important notices using CSS class */
+.important-notice {
+    color: red;
+    font-weight: bold;
+    margin-left: 10px;
+    background-color: #ffe6e6;
+    padding: 2px 5px;
+    border-radius: 4px;
+}

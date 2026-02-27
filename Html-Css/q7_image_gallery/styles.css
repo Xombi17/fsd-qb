@@ -1,0 +1,55 @@
+/* Styling for Image Gallery */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+    margin: 0;
+    padding: 20px;
+}
+
+.gallery-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.image-gallery {
+    /* Mandatory CSS Styles: display:grid / flex, gap, width, transform, transition */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.gallery-item {
+    background-color: white;
+    margin: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+    /* Required width property for image */
+    width: 100%;
+    height: auto;
+    display: block;
+    /* Required property: transition */
+    transition: transform 0.3s ease;
+}
+
+/* Hover zoom effect using transform */
+.gallery-item:hover img {
+    /* Required property: transform */
+    transform: scale(1.1);
+}
+
+figcaption {
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    color: #444;
+    background-color: white;
+    position: relative;
+    z-index: 2;
+    /* keep caption on top of scaled image */
+}
