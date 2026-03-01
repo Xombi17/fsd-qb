@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import ProductList from './components/ProductList'
+import SearchBar from './components/SearchBar'
 import './App.css'
 
 function App() {
@@ -21,22 +23,11 @@ function App() {
   return (
     <div className="app">
       <h1>Product Search</h1>
-      <input
-        type="text"
-        placeholder="Search products..."
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-      />
+      <SearchBar search={search} onSearchChange={setSearch} />
 
-      <ul className="product-list">
-        {filteredProducts.length === 0 && <li>No products found</li>}
-        {filteredProducts.map((product) => (
-          <li key={product.id}>
-            <span>{product.name}</span>
-            <span>₹{product.price}</span>
-          </li>
-        ))}
-      </ul>
+      <div className="product-list-container">
+        <ProductList products={filteredProducts} />
+      </div>
     </div>
   )
 }

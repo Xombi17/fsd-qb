@@ -1,14 +1,11 @@
 function ProductList({ products }) {
-  if (products.length === 0) {
-    return <p>No products found.</p>
-  }
-
   return (
-    <ul>
+    <ul className="product-list">
+      {products.length === 0 && <li>No products found</li>}
       {products.map(product => (
         <li key={product.id}>
           <span>{product.name}</span>
-          <span>${product.price}</span>
+          <span>₹{product.price}</span>
         </li>
       ))}
     </ul>
