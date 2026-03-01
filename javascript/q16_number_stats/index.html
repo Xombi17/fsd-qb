@@ -9,26 +9,9 @@
 </head>
 
 <body>
-    <main>
-        <h1>Number Statistics</h1>
-        <form id="numForm">
-            <label for="count">How many numbers?</label>
-            <input type="number" id="count" min="1" placeholder="e.g. 5" required />
-            <button type="button" id="generateBtn">Generate Fields</button>
-        </form>
-
-        <form id="numbersForm" class="hidden">
-            <div id="numberInputs"></div>
-            <button type="submit">Calculate</button>
-        </form>
-
-        <section id="result" class="hidden">
-            <h2>Statistics</h2>
-            <p>Maximum: <span id="max"></span></p>
-            <p>Minimum: <span id="min"></span></p>
-            <p>Average: <span id="avg"></span></p>
-        </section>
-    </main>
+    <h1>Number Statistics</h1>
+    <button onclick="findStats()">Enter Numbers</button>
+    <p id="out"></p>
     <script src="script.js"></script>
 </body>
 

@@ -1,44 +1,44 @@
-document.getElementById('generateBtn').addEventListener('click', function () {
-    const count = parseInt(document.getElementById('count').value);
-    if (!count || count < 1) {
-        alert('Please enter a valid number.');
+function findStats() {
+    let n = parseInt(prompt("How many numbers?"));
+
+    if (isNaN(n) || n <= 0) {
+        alert("Please enter a valid positive number.");
         return;
     }
 
-    const container = document.getElementById('numberInputs');
-    container.innerHTML = '';
+    let numbers = [];
 
-    for (let i = 1; i <= count; i++) {
-        const label = document.createElement('label');
-        label.textContent = `Number ${i}:`;
+    for (let i = 0; i < n; i++) {
+        let value = parseFloat(prompt("Enter number " + (i + 1) + ":"));
 
-        const input = document.createElement('input');
-        input.type = 'number';
-        input.className = 'numEntry';
-        input.placeholder = `Enter number ${i}`;
-        input.required = true;
+        if (isNaN(value)) {
+            alert("Invalid input. Please try again.");
+            return;
+        }
 
-        container.appendChild(label);
-        container.appendChild(input);
+        numbers.push(value);
     }
 
-    document.getElementById('numbersForm').classList.remove('hidden');
-    document.getElementById('result').classList.add('hidden');
-});
+    let max = numbers[0];
+    let min = numbers[0];
+    let sum = 0;
 
-document.getElementById('numbersForm').addEventListener('submit', function (e) {
-    e.preventDefault();
+    for (let i = 0; i < numbers.length; i++) {
+        if (numbers[i] > max) {
+            max = numbers[i];
+        }
 
-    const inputs = document.querySelectorAll('.numEntry');
-    const numbers = Array.from(inputs).map(inp => parseFloat(inp.value));
+        if (numbers[i] < min) {
+            min = numbers[i];
+        }
 
-    const max = Math.max(...numbers);
-    const min = Math.min(...numbers);
-    const avg = numbers.reduce((sum, n) => sum + n, 0) / numbers.length;
+        sum = sum + numbers[i];
+    }
 
-    document.getElementById('max').textContent = max;
-    document.getElementById('min').textContent = min;
-    document.getElementById('avg').textContent = avg.toFixed(2);
+    let avg = sum / numbers.length;
 
-    document.getElementById('result').classList.remove('hidden');
-});
+    document.getElementById("out").innerHTML =
+        "Maximum: " + max + "<br>" +
+        "Minimum: " + min + "<br>" +
+        "Average: " + avg.toFixed(2);
+}
