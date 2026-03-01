@@ -9,37 +9,17 @@
 </head>
 
 <body>
-    <main>
-        <h1>Simple Calculator</h1>
-        <section class="calculator" aria-label="Calculator">
-            <output id="display">0</output>
-            <div class="buttons">
-                <button class="btn-clear" onclick="clearDisplay()">C</button>
-                <button class="btn-op" onclick="deleteLast()">⌫</button>
-                <button class="btn-op" onclick="appendToDisplay('%')">%</button>
-                <button class="btn-op" onclick="appendToDisplay('/')">÷</button>
+    <h1>Simple Calculator</h1>
 
-                <button onclick="appendToDisplay('7')">7</button>
-                <button onclick="appendToDisplay('8')">8</button>
-                <button onclick="appendToDisplay('9')">9</button>
-                <button class="btn-op" onclick="appendToDisplay('*')">×</button>
+    <input type="number" id="n1" placeholder="First number"><br><br>
+    <input type="number" id="n2" placeholder="Second number"><br><br>
 
-                <button onclick="appendToDisplay('4')">4</button>
-                <button onclick="appendToDisplay('5')">5</button>
-                <button onclick="appendToDisplay('6')">6</button>
-                <button class="btn-op" onclick="appendToDisplay('-')">−</button>
+    <button onclick="calculate('+')">Add</button>
+    <button onclick="calculate('-')">Subtract</button>
+    <button onclick="calculate('*')">Multiply</button>
+    <button onclick="calculate('/')">Divide</button>
 
-                <button onclick="appendToDisplay('1')">1</button>
-                <button onclick="appendToDisplay('2')">2</button>
-                <button onclick="appendToDisplay('3')">3</button>
-                <button class="btn-op" onclick="appendToDisplay('+')">+</button>
-
-                <button class="btn-zero" onclick="appendToDisplay('0')">0</button>
-                <button onclick="appendToDisplay('.')">.</button>
-                <button class="btn-equals" onclick="calculate()">=</button>
-            </div>
-        </section>
-    </main>
+    <p id="result">Result: </p>
     <script src="script.js"></script>
 </body>
 

@@ -1,45 +1,35 @@
-document.getElementById('regForm').addEventListener('submit', function (e) {
+document.getElementById("form").addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const name = document.getElementById('name');
-    const email = document.getElementById('email');
-    const password = document.getElementById('password');
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let password = document.getElementById("password").value;
 
-    const nameError = document.getElementById('nameError');
-    const emailError = document.getElementById('emailError');
-    const passwordError = document.getElementById('passwordError');
+    document.getElementById("nameErr").textContent = "";
+    document.getElementById("emailErr").textContent = "";
+    document.getElementById("passErr").textContent = "";
+    document.getElementById("msg").textContent = "";
 
-    let isValid = true;
+    let ok = true;
 
-    // Clear previous errors
-    [name, email, password].forEach(el => el.classList.remove('invalid'));
-    [nameError, emailError, passwordError].forEach(el => el.textContent = '');
-    document.getElementById('successMsg').classList.add('hidden');
-
-    // Validate Name
-    if (name.value.trim() === '') {
-        nameError.textContent = 'Name cannot be empty.';
-        name.classList.add('invalid');
-        isValid = false;
+    if (name === "") {
+        document.getElementById("nameErr").textContent = "Name is required";
+        ok = false;
     }
 
-    // Validate Email
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(email.value.trim())) {
-        emailError.textContent = 'Please enter a valid email address.';
-        email.classList.add('invalid');
-        isValid = false;
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        document.getElementById("emailErr").textContent = "Enter valid email";
+        ok = false;
     }
 
-    // Validate Password
-    if (password.value.length < 6) {
-        passwordError.textContent = 'Password must be at least 6 characters.';
-        password.classList.add('invalid');
-        isValid = false;
+    if (password.length < 6) {
+        document.getElementById("passErr").textContent = "Password must be 6+ chars";
+        ok = false;
     }
 
-    if (isValid) {
-        document.getElementById('successMsg').classList.remove('hidden');
+    if (ok) {
+        document.getElementById("msg").textContent = "Form submitted successfully";
         this.reset();
     }
 });

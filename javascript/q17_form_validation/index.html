@@ -9,31 +9,25 @@
 </head>
 
 <body>
-    <main>
-        <h1>Registration Form</h1>
-        <form id="regForm" novalidate>
-            <div class="field">
-                <label for="name">Name:</label>
-                <input type="text" id="name" placeholder="Enter your name" />
-                <span class="error" id="nameError"></span>
-            </div>
+    <h1>Registration Form</h1>
 
-            <div class="field">
-                <label for="email">Email:</label>
-                <input type="email" id="email" placeholder="Enter your email" />
-                <span class="error" id="emailError"></span>
-            </div>
+    <form id="form">
+        <label>Name:</label><br>
+        <input type="text" id="name"><br>
+        <span id="nameErr"></span><br>
 
-            <div class="field">
-                <label for="password">Password:</label>
-                <input type="password" id="password" placeholder="Min 6 characters" />
-                <span class="error" id="passwordError"></span>
-            </div>
+        <label>Email:</label><br>
+        <input type="text" id="email"><br>
+        <span id="emailErr"></span><br>
 
-            <button type="submit">Register</button>
-            <p id="successMsg" class="hidden success">Registration successful!</p>
-        </form>
-    </main>
+        <label>Password:</label><br>
+        <input type="password" id="password"><br>
+        <span id="passErr"></span><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <p id="msg"></p>
     <script src="script.js"></script>
 </body>
 

@@ -1,67 +1,62 @@
-let dataArray = [];
+let arr = [];
 
-function renderArray() {
-    const list = document.getElementById('arrayList');
-    list.innerHTML = '';
-
-    if (dataArray.length === 0) {
-        const li = document.createElement('li');
-        li.className = 'empty';
-        li.textContent = 'Array is empty.';
-        list.appendChild(li);
-        return;
-    }
-
-    dataArray.forEach(function (item) {
-        const li = document.createElement('li');
-        li.textContent = item;
-        list.appendChild(li);
-    });
+function showArray() {
+    document.getElementById("out").textContent = "Array: [" + arr.join(", ") + "]";
 }
 
-function setMessage(text, type) {
-    const msg = document.getElementById('message');
-    msg.textContent = text;
-    msg.className = type;
+function startMenu() {
+    while (true) {
+        let choice = prompt(
+            "Array Menu\n1. Add element\n2. Remove element\n3. Search element\n4. Display array\n5. Exit\nEnter choice:"
+        );
+
+        if (choice === "1") {
+            let value = prompt("Enter element to add:");
+            if (value !== null && value !== "") {
+                arr.push(value);
+                alert("Added");
+            }
+        } else if (choice === "2") {
+            let value = prompt("Enter element to remove:");
+            let index = -1;
+
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] === value) {
+                    index = i;
+                    break;
+                }
+            }
+
+            if (index !== -1) {
+                arr.splice(index, 1);
+                alert("Removed");
+            } else {
+                alert("Element not found");
+            }
+        } else if (choice === "3") {
+            let value = prompt("Enter element to search:");
+            let found = false;
+
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] === value) {
+                    found = true;
+                    break;
+                }
+            }
+
+            if (found) {
+                alert("Element found");
+            } else {
+                alert("Element not found");
+            }
+        } else if (choice === "4") {
+            alert("Array: [" + arr.join(", ") + "]");
+        } else if (choice === "5" || choice === null) {
+            break;
+        } else {
+            alert("Invalid choice");
+        }
+    }
+
+    showArray();
 }
-
-// Add
-document.getElementById('addBtn').addEventListener('click', function () {
-    const val = document.getElementById('addInput').value.trim();
-    if (val === '') {
-        setMessage('Please enter a value to add.', 'info');
-        return;
-    }
-    dataArray.push(val);
-    renderArray();
-    setMessage(`"${val}" added to the array.`, 'found');
-    document.getElementById('addInput').value = '';
-});
-
-// Remove
-document.getElementById('removeBtn').addEventListener('click', function () {
-    const val = document.getElementById('removeInput').value.trim();
-    const index = dataArray.indexOf(val);
-
-    if (index === -1) {
-        setMessage(`"${val}" not found in the array.`, 'not-found');
-        return;
-    }
-
-    dataArray.splice(index, 1);
-    renderArray();
-    setMessage(`"${val}" removed from the array.`, 'found');
-    document.getElementById('removeInput').value = '';
-});
-
-// Search
-document.getElementById('searchBtn').addEventListener('click', function () {
-    const val = document.getElementById('searchInput').value.trim();
-    const index = dataArray.indexOf(val);
-
-    if (index === -1) {
-        setMessage(`"${val}" was NOT found in the array.`, 'not-found');
-    } else {
-        setMessage(`"${val}" found at index ${index}.`, 'found');
-    }
-});

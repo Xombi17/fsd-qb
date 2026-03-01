@@ -9,37 +9,9 @@
 </head>
 
 <body>
-    <main>
-        <h1>Array Operations Menu</h1>
-        <section class="controls">
-            <div class="op-group">
-                <label for="addInput">Add Element:</label>
-                <input type="text" id="addInput" placeholder="Enter value" />
-                <button id="addBtn">Add</button>
-            </div>
-
-            <div class="op-group">
-                <label for="removeInput">Remove Element:</label>
-                <input type="text" id="removeInput" placeholder="Enter value to remove" />
-                <button id="removeBtn">Remove</button>
-            </div>
-
-            <div class="op-group">
-                <label for="searchInput">Search Element:</label>
-                <input type="text" id="searchInput" placeholder="Enter value to search" />
-                <button id="searchBtn">Search</button>
-            </div>
-        </section>
-
-        <p id="message"></p>
-
-        <section id="arrayDisplay">
-            <h2>Current Array</h2>
-            <ul id="arrayList">
-                <li class="empty">Array is empty.</li>
-            </ul>
-        </section>
-    </main>
+    <h1>Array Operations Menu</h1>
+    <button onclick="startMenu()">Start Menu</button>
+    <p id="out">Array: []</p>
     <script src="script.js"></script>
 </body>
 
