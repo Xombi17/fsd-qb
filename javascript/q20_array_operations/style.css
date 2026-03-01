@@ -2,17 +2,29 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     margin-top: 40px;
+    background-color:bisque;
 }
 
 h1 {
     margin-bottom: 20px;
+    
 }
 
 button {
     padding: 8px 14px;
+    color:brown;
+    background-color: #fff;
 }
+button:hover{
+    color: aqua;
+}
+
 
 p {
     margin-top: 20px;
     font-size: 18px;
+}
+input{
+    padding:10px;
+    background: beige;
 }
