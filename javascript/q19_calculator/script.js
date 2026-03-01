@@ -1,26 +1,22 @@
-function calculate(op) {
-    let a = parseFloat(document.getElementById("n1").value);
-    let b = parseFloat(document.getElementById("n2").value);
-    let ans;
+function press(value) {
+    document.getElementById("display").value += value;
+}
 
-    if (isNaN(a) || isNaN(b)) {
-        document.getElementById("result").textContent = "Result: Enter valid numbers";
+function calculate() {
+    let exp = document.getElementById("display").value;
+
+    if (exp === "") {
         return;
     }
 
-    if (op === "+") {
-        ans = a + b;
-    } else if (op === "-") {
-        ans = a - b;
-    } else if (op === "*") {
-        ans = a * b;
-    } else if (op === "/") {
-        if (b === 0) {
-            document.getElementById("result").textContent = "Result: Cannot divide by zero";
-            return;
-        }
-        ans = a / b;
+    try {
+        let ans = eval(exp);
+        document.getElementById("display").value = ans;
+    } catch (e) {
+        document.getElementById("display").value = "Error";
     }
+}
 
-    document.getElementById("result").textContent = "Result: " + ans;
+function clearDisplay() {
+    document.getElementById("display").value = "";
 }

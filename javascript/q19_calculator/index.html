@@ -11,15 +11,34 @@
 <body>
     <h1>Simple Calculator</h1>
 
-    <input type="number" id="n1" placeholder="First number"><br><br>
-    <input type="number" id="n2" placeholder="Second number"><br><br>
+    <input type="text" id="display" readonly value="">
+    <br><br>
 
-    <button onclick="calculate('+')">Add</button>
-    <button onclick="calculate('-')">Subtract</button>
-    <button onclick="calculate('*')">Multiply</button>
-    <button onclick="calculate('/')">Divide</button>
+    <button onclick="press('7')">7</button>
+    <button onclick="press('8')">8</button>
+    <button onclick="press('9')">9</button>
+    <button onclick="press('/')">÷</button>
+    <br>
 
-    <p id="result">Result: </p>
+    <button onclick="press('4')">4</button>
+    <button onclick="press('5')">5</button>
+    <button onclick="press('6')">6</button>
+    <button onclick="press('*')">×</button>
+    <br>
+
+    <button onclick="press('1')">1</button>
+    <button onclick="press('2')">2</button>
+    <button onclick="press('3')">3</button>
+    <button onclick="press('-')">-</button>
+    <br>
+
+    <button onclick="press('0')">0</button>
+    <button onclick="press('.')">.</button>
+    <button onclick="calculate()">=</button>
+    <button onclick="press('+')">+</button>
+    <br>
+
+    <button onclick="clearDisplay()">C</button>
     <script src="script.js"></script>
 </body>
 
