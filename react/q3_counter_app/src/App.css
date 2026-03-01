@@ -5,17 +5,11 @@
   font-family: Arial, sans-serif;
 }
 
-.count {
-  font-size: 60px;
-  margin: 20px 0;
-  color: #333;
-}
-
-.step-control {
+.step-box {
   margin: 20px 0;
 }
 
-.step-control input {
+.step-box input {
   width: 80px;
   padding: 8px;
   font-size: 16px;
