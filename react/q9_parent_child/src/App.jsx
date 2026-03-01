@@ -2,11 +2,9 @@ import { useState } from 'react'
 import Child from './components/Child'
 import './App.css'
 
-// Parent component - stores message in state
 function App() {
   const [message, setMessage] = useState('Hello from Parent!')
 
-  // Callback function passed to child (lifting state up)
   function updateMessage(newMsg) {
     setMessage(newMsg)
   }
@@ -22,7 +20,6 @@ function App() {
         </button>
       </div>
 
-      {/* Pass message and callback to Child via props */}
       <Child message={message} onUpdateMessage={updateMessage} />
     </div>
   )

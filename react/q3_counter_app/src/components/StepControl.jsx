@@ -1,4 +1,3 @@
-// StepControl component - controlled input for step value
 function StepControl({ step, onStepChange }) {
   return (
     <div className="step-control">

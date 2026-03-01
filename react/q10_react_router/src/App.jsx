@@ -10,14 +10,12 @@ function App() {
       <div className="app">
         <h1>Multi-Page App</h1>
 
-        {/* Navigation links - no page reload */}
         <nav>
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
           <Link to="/contact">Contact</Link>
         </nav>
 
-        {/* Display component based on URL */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

@@ -1,4 +1,3 @@
-// FormInput component - reusable input with error display
 function FormInput({ type, placeholder, value, onChange, error }) {
   return (
     <div>
@@ -8,7 +7,6 @@ function FormInput({ type, placeholder, value, onChange, error }) {
         value={value}
         onChange={onChange}
       />
-      {/* Conditional rendering of error message */}
       {error && <p className="error">{error}</p>}
     </div>
   )

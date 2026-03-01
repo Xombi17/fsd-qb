@@ -7,7 +7,6 @@ function App() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
-  // useEffect to fetch data on component mount
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/users')
       .then(response => {
@@ -24,10 +23,8 @@ function App() {
       })
   }, [])
 
-  // Conditional rendering - loading state
   if (loading) return <div className="app"><h1>Loading...</h1></div>
 
-  // Conditional rendering - error state
   if (error) return <div className="app"><h1>Error: {error}</h1></div>
 
   return (

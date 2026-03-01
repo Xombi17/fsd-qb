@@ -8,12 +8,18 @@ function App() {
 
   function addTask() {
     if (input.trim() === '') return
-    setTasks([...tasks, { id: Date.now(), text: input }])
+    setTasks([...tasks, input])
     setInput('')
   }
 
-  function deleteTask(id) {
-    setTasks(tasks.filter(task => task.id !== id))
+  function deleteTask(indexToDelete) {
+    let updatedTasks = []
+    for (let i = 0; i < tasks.length; i++) {
+      if (i !== indexToDelete) {
+        updatedTasks.push(tasks[i])
+      }
+    }
+    setTasks(updatedTasks)
   }
 
   return (
@@ -31,9 +37,8 @@ function App() {
       </div>
 
       <ul>
-        {/* Render tasks dynamically using .map() with key */}
-        {tasks.map(task => (
-          <TaskItem key={task.id} task={task} onDelete={deleteTask} />
+        {tasks.map((task, index) => (
+          <TaskItem key={index} task={task} index={index} onDelete={deleteTask} />
         ))}
       </ul>
 

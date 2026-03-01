@@ -1,4 +1,3 @@
-// About page component
 function About() {
   return (
     <div className="page">

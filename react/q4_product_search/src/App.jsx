@@ -16,10 +16,9 @@ const productList = [
 function App() {
   const [search, setSearch] = useState('')
 
-  // Filter products - case insensitive search
-  const filtered = productList.filter(product =>
-    product.name.toLowerCase().includes(search.toLowerCase())
-  )
+  const filtered = productList.filter(function (product) {
+    return product.name.toLowerCase().includes(search.toLowerCase())
+  })
 
   return (
     <div className="app">

@@ -1,4 +1,3 @@
-// Result component - receives data via props from parent
 function Result({ name, marks, total, percentage, grade }) {
   return (
     <div className="result-card">

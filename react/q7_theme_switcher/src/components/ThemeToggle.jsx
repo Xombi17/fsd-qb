@@ -1,4 +1,3 @@
-// ThemeToggle component - button to switch theme
 function ThemeToggle({ theme, onToggle }) {
   return (
     <button onClick={onToggle}>

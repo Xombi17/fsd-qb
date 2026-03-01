@@ -1,4 +1,3 @@
-// Home page component
 function Home() {
   return (
     <div className="page">

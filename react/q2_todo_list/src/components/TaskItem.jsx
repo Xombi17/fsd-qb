@@ -1,9 +1,8 @@
-// TaskItem component - displays a single task with delete button
-function TaskItem({ task, onDelete }) {
+function TaskItem({ task, index, onDelete }) {
   return (
     <li>
-      <span>{task.text}</span>
-      <button onClick={() => onDelete(task.id)}>Delete</button>
+      <span>{task}</span>
+      <button onClick={() => onDelete(index)}>Delete</button>
     </li>
   )
 }

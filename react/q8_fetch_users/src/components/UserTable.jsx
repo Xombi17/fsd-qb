@@ -1,4 +1,3 @@
-// UserTable component - displays user data in a table
 function UserTable({ users }) {
   return (
     <table>

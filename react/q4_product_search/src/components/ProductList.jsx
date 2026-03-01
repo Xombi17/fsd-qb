@@ -1,4 +1,3 @@
-// ProductList component - renders filtered products
 function ProductList({ products }) {
   if (products.length === 0) {
     return <p>No products found.</p>

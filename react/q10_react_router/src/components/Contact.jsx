@@ -1,4 +1,3 @@
-// Contact page component
 function Contact() {
   return (
     <div className="page">

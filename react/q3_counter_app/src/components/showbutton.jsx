@@ -1,11 +1,11 @@
-import React from 'react'
+import { useState } from 'react'
 import './showbutton.css'
 
 const ShowButton = () => {
-  const [showMessage, setShowMessage] = React.useState(false)
+  const [showMessage, setShowMessage] = useState(false)
 
   const toggle = () => {
-    setShowMessage((prev) => !prev)
+    setShowMessage(!showMessage)
   }
 
   return (

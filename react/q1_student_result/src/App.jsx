@@ -2,7 +2,6 @@ import { useState } from 'react'
 import Result from './components/Result'
 import './App.css'
 
-// Function to calculate grade based on percentage
 function getGrade(pct) {
   if (pct >= 90) return 'A+'
   if (pct >= 80) return 'A'
@@ -23,9 +22,9 @@ function App() {
     e.preventDefault()
     const marks = [Number(sub1), Number(sub2), Number(sub3)]
     const total = marks[0] + marks[1] + marks[2]
-    const percentage = (total / 300 * 100).toFixed(2)
+    const percentage = total / 300 * 100
     const grade = getGrade(percentage)
-    setResult({ name, marks, total, percentage, grade })
+    setResult({ name, marks, total, percentage: percentage.toFixed(2), grade })
   }
 
   return (
@@ -43,7 +42,6 @@ function App() {
         <button type="submit">Show Result</button>
       </form>
 
-      {/* Pass data from parent to child using props */}
       {result && (
         <Result
           name={result.name}

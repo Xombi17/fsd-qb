@@ -8,13 +8,12 @@ function App() {
   const [count, setCount] = useState(0)
   const [step, setStep] = useState(1)
 
-  // Functional updates in useState
   function increment() {
-    setCount(prev => prev + step)
+    setCount(count + step)
   }
 
   function decrement() {
-    setCount(prev => prev - step)
+    setCount(count - step)
   }
 
   function reset() {
