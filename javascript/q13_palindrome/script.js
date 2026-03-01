@@ -1,18 +1,17 @@
-document.getElementById('palindromeForm').addEventListener('submit', function (e) {
-    e.preventDefault();
+function checkPalindrome() {
+  let word = document.getElementById("inputString").value;
 
-    const input = document.getElementById('inputStr').value.trim();
-    const cleaned = input.toLowerCase().replace(/[^a-z0-9]/g, '');
-    const reversed = cleaned.split('').reverse().join('');
+  let reversedWord = "";
 
-    const resultEl = document.getElementById('result');
-    resultEl.classList.remove('hidden', 'palindrome', 'not-palindrome');
+  for (let i = word.length - 1; i >= 0; i--) {
+    reversedWord = reversedWord + word[i];
+  }
 
-    if (cleaned === reversed) {
-        resultEl.textContent = `"${input}" is a Palindrome!`;
-        resultEl.classList.add('palindrome');
-    } else {
-        resultEl.textContent = `"${input}" is NOT a Palindrome.`;
-        resultEl.classList.add('not-palindrome');
-    }
-});
+  if (word === reversedWord) {
+    document.getElementById("result").innerText = word + " is a Palindrome ";
+  } else {
+    document.getElementById("result").innerText =
+      word + " is NOT a Palindrome ";
+  }
+}
+    
