@@ -1,5 +1,5 @@
 function Counter({ count }) {
-  return <h2 className="count">{count}</h2>
+  return <span className="count">{count}</span>
 }
 
 export default Counter

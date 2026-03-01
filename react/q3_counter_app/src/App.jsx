@@ -1,4 +1,7 @@
 import { useState } from 'react'
+import Counter from './components/Counter'
+import StepControl from './components/StepControl'
+import ShowButton from './components/showbutton'
 import './App.css'
 
 function App() {
@@ -20,24 +23,17 @@ function App() {
   return (
     <div className="app">
       <h1>Counter App</h1>
-      <h2>Count: {count}</h2>
+      <h2>Count: <Counter count={count} /></h2>
 
-      <div className="step-box">
-        <label htmlFor="step">Step Value</label>
-        <input
-          id="step"
-          type="number"
-          min="1"
-          value={step}
-          onChange={(e) => setStep(Number(e.target.value) || 1)}
-        />
-      </div>
+      <StepControl step={step} onStepChange={(value) => setStep(value || 1)} />
 
       <div className="buttons">
         <button onClick={decrement}>- Decrement</button>
         <button className="reset" onClick={reset}>Reset</button>
         <button onClick={increment}>+ Increment</button>
       </div>
+
+      <ShowButton />
     </div>
   )
 }
