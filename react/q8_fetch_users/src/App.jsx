@@ -1,13 +1,22 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import UserTable from './components/UserTable'
 import './App.css'
 
 function App() {
   const [users, setUsers] = useState([])
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
+  const [fetchTrigger, setFetchTrigger] = useState(0)
+
+  function handleFetchUsers() {
+    setLoading(true)
+    setError(null)
+    setFetchTrigger((prev) => prev + 1)
+  }
 
   useEffect(() => {
+    if (fetchTrigger === 0) return
+
     fetch('https://jsonplaceholder.typicode.com/users')
       .then(response => {
         if (!response.ok) throw new Error('Failed to fetch')
@@ -21,16 +30,19 @@ function App() {
         setError(err.message)
         setLoading(false)
       })
-  }, [])
-
-  if (loading) return <div className="app"><h1>Loading...</h1></div>
-
-  if (error) return <div className="app"><h1>Error: {error}</h1></div>
+  }, [fetchTrigger])
 
   return (
     <div className="app">
       <h1>User List</h1>
-      <UserTable users={users} />
+      <button onClick={handleFetchUsers} disabled={loading}>
+        {loading ? 'Fetching...' : 'Fetch Users'}
+      </button>
+
+      {fetchTrigger === 0 && !loading && !error && <h2>Click "Fetch Users" to load data</h2>}
+      {loading && <h2>Loading users...</h2>}
+      {error && <h2>Error: {error}</h2>}
+      {!loading && !error && users.length > 0 && <UserTable users={users} />}
     </div>
   )
 }
