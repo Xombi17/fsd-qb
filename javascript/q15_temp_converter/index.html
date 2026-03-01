@@ -1,47 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Q15 - Temperature Converter</title>
-
-    <link rel="stylesheet" href="style.css" />
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Temperature Converter</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-    <main>
-        <h1>Temperature Converter</h1>
-        <form id="tempForm">
-            <label for="tempValue">Temperature:</label>
-            <input type="number" id="tempValue" placeholder="Enter temperature" step="any" required />
 
-            <fieldset>
-                <legend>Convert:</legend>
+  <h1>Temperature Converter</h1>
 
-                <div>   
+  <form id="tempForm">
 
-                <label>
-                    <input type="radio" name="convType" value="CtoF" checked />
-                    Celsius → Fahrenheit
-                </label>
+    <label for="tempValue">Enter Temperature:</label>
+    <br>
+    <input type="number" id="tempValue" placeholder="e.g. 100" step="any" required />
 
-                </div>
+    <br><br>
 
-                <div>   
-                <label>
-                    <input type="radio" name="convType" value="FtoC" />
-                    Fahrenheit → Celsius
-                </label>
-                </div>
-            </fieldset>
+    <fieldset>
+      <legend>Select Conversion:</legend>
 
-            <button type="submit">Convert</button>
-        </form>
-        <p id="result"></p>
-    </main>
-    <script src="script.js"></script>
+      <input type="radio" name="convType" value="CtoF" checked />
+      <label>Celsius to Fahrenheit</label>
+
+      <br><br>
+
+      <input type="radio" name="convType" value="FtoC" />
+      <label>Fahrenheit to Celsius</label>
+
+    </fieldset>
+
+    <br>
+    <br>
+    
+
+        
+    <button type="submit">Convert</button>
+
+  </form>
+
+  <p id="result"></p>
+
+  <script src="script.js"></script>
 </body>
-
 </html>
