@@ -1,18 +1,26 @@
 function calculateConversion() {
-    const tempInput = document.getElementById('tempValue').value;
-    const convType = document.querySelector('input[name="convType"]:checked').value;
+    let tempInput = parseFloat(document.getElementById('tempValue').value);
+    let radios = document.getElementsByName('convType');
+    let convType = 'CtoF';
     let result;
 
-    if (convType === 'CtoF') {
-        result = (tempInput * 9/5) + 32; // Celsius to Fahrenheit
-    } else {
-        result = (tempInput - 32) * 5/9; // Fahrenheit to Celsius
+    for (let i = 0; i < radios.length; i++) {
+        if (radios[i].checked) {
+            convType = radios[i].value;
+            break;
+        }
     }
 
-    document.getElementById('result').textContent = `Result: ${result.toFixed(2)}`;
+    if (convType === 'CtoF') {
+        result = (tempInput * 9 / 5) + 32;
+    } else {
+        result = (tempInput - 32) * 5 / 9;
+    }
+
+    document.getElementById('result').textContent = 'Result: ' + result.toFixed(2);
 }
 
-document.getElementById('tempForm').addEventListener('submit', function(event) {
-    event.preventDefault(); 
+document.getElementById('tempForm').addEventListener('submit', function (event) {
+    event.preventDefault();
     calculateConversion();
 });
