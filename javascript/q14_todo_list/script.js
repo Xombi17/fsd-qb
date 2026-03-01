@@ -1,29 +1,28 @@
-document.getElementById('todoForm').addEventListener('submit', function (e) {
-    e.preventDefault();
+function addTask() {
+  let taskText = document.getElementById("taskInput").value;
 
-    const input = document.getElementById('taskInput');
-    const taskText = input.value.trim();
+  if (taskText === "") {
+    alert("Please enter a task!");
+    return;
+  }
 
-    if (!taskText) return;
+  let list = document.getElementById("taskList");
 
-    const taskList = document.getElementById('taskList');
+  let listItem = document.createElement("li");
 
-    const li = document.createElement('li');
+  listItem.innerText = taskText;
 
-    const taskSpan = document.createElement('span');
-    taskSpan.textContent = taskText;
+  let deleteButton = document.createElement("button");
 
-    const deleteBtn = document.createElement('button');
-    deleteBtn.textContent = 'Delete';
-    deleteBtn.className = 'delete-btn';
-    deleteBtn.addEventListener('click', function () {
-        taskList.removeChild(li);
-    });
+  deleteButton.innerText = "Delete";
 
-    li.appendChild(taskSpan);
-    li.appendChild(deleteBtn);
-    taskList.appendChild(li);
+  deleteButton.onclick = function () {
+    list.removeChild(listItem);
+  };
 
-    input.value = '';
-    input.focus();
-});
+  listItem.appendChild(deleteButton);
+
+  list.appendChild(listItem);
+
+  document.getElementById("taskInput").value = "";
+}
