@@ -1,28 +1,10 @@
 function addTask() {
-  let taskText = document.getElementById("taskInput").value;
+  let li = document.createElement("li");
 
-  if (taskText === "") {
-    alert("Please enter a task!");
-    return;
-  }
+  li.innerHTML =
+    document.getElementById("task").value +
+    " <button onclick='this.parentElement.remove()'>Delete</button>";
 
-  let list = document.getElementById("taskList");
-
-  let listItem = document.createElement("li");
-
-  listItem.innerText = taskText;
-
-  let deleteButton = document.createElement("button");
-
-  deleteButton.innerText = "Delete";
-
-  deleteButton.onclick = function () {
-    list.removeChild(listItem);
-  };
-
-  listItem.appendChild(deleteButton);
-
-  list.appendChild(listItem);
-
-  document.getElementById("taskInput").value = "";
+  document.getElementById("list").appendChild(li);
+  document.getElementById("task").value = "";
 }

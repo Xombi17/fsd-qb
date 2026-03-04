@@ -1,35 +1,13 @@
-document.getElementById("form").addEventListener("submit", function (e) {
-    e.preventDefault();
+function validate() {
+    if (document.getElementById("name").value === "")
+        document.getElementById("error").innerHTML = "Name required";
 
-    let name = document.getElementById("name").value.trim();
-    let email = document.getElementById("email").value.trim();
-    let password = document.getElementById("password").value;
+    else if (!document.getElementById("email").value.includes("@"))
+        document.getElementById("error").innerHTML = "Invalid Email";
 
-    document.getElementById("nameErr").textContent = "";
-    document.getElementById("emailErr").textContent = "";
-    document.getElementById("passErr").textContent = "";
-    document.getElementById("msg").textContent = "";
+    else if (document.getElementById("pass").value.length < 6)
+        document.getElementById("error").innerHTML = "Password too short";
 
-    let ok = true;
-
-    if (name === "") {
-        document.getElementById("nameErr").textContent = "Name is required";
-        ok = false;
-    }
-
-    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(email)) {
-        document.getElementById("emailErr").textContent = "Enter valid email";
-        ok = false;
-    }
-
-    if (password.length < 6) {
-        document.getElementById("passErr").textContent = "Password must be 6+ chars";
-        ok = false;
-    }
-
-    if (ok) {
-        document.getElementById("msg").textContent = "Form submitted successfully";
-        this.reset();
-    }
-});
+    else
+        document.getElementById("error").innerHTML = "Form Submitted";
+}

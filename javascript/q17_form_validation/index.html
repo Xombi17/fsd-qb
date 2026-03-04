@@ -1,34 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Q17 - Form Validation</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q17 Form Validation</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <h1>Registration Form</h1>
 
-    <form id="form">
-        <label>Name:</label><br>
-        <input type="text" id="name"><br>
-        <span id="nameErr"></span><br>
+<input id="name" placeholder="Name">
+<input id="email" placeholder="Email">
+<input id="pass" type="password" placeholder="Password">
 
-        <label>Email:</label><br>
-        <input type="text" id="email"><br>
-        <span id="emailErr"></span><br>
+<button onclick="validate()">Submit</button>
 
-        <label>Password:</label><br>
-        <input type="password" id="password"><br>
-        <span id="passErr"></span><br><br>
+<p id="error"></p>
 
-        <button type="submit">Submit</button>
-    </form>
-
-    <p id="msg"></p>
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
-
 </html>

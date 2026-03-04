@@ -1,40 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Q11 - Student Marks Analyzer</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q11 Student Marks Analyzer</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main>
-    <h1>Student Marks Analyzer</h1>
-    <form id="marksForm">
-      <label for="sub1">Subject 1:</label>
-      <input type="number" id="sub1" min="0" max="100" placeholder="Enter marks" required />
 
-      <label for="sub2">Subject 2:</label>
-      <input type="number" id="sub2" min="0" max="100" placeholder="Enter marks" required />
+<h2>Student Marks Analyzer</h2>
 
-      <label for="sub3">Subject 3:</label>
-      <input type="number" id="sub3" min="0" max="100" placeholder="Enter marks" required />
+<input id="m1" placeholder="Subject 1">
+<input id="m2" placeholder="Subject 2">
+<input id="m3" placeholder="Subject 3">
+<input id="m4" placeholder="Subject 4">
+<input id="m5" placeholder="Subject 5">
 
-      <label for="sub4">Subject 4:</label>
-      <input type="number" id="sub4" min="0" max="100" placeholder="Enter marks" required />
+<button onclick="calculate()">Calculate</button>
 
-      <label for="sub5">Subject 5:</label>
-      <input type="number" id="sub5" min="0" max="100" placeholder="Enter marks" required />
+<p id="result"></p>
 
-      <button type="submit">Analyze</button>
-    </form>
-
-    <section id="result" class="hidden">
-      <h2>Result</h2>
-      <p>Total: <span id="total"></span> / 500</p>
-      <p>Percentage: <span id="percentage"></span>%</p>
-      <p>Grade: <span id="grade"></span></p>
-    </section>
-  </main>
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

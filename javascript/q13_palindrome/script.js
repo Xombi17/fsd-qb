@@ -1,17 +1,9 @@
-function checkPalindrome() {
-  let word = document.getElementById("inputString").value;
+function check() {
+  let word = document.getElementById("text").value;
+  let reversed = word.split("").reverse().join("");
 
-  let reversedWord = "";
-
-  for (let i = word.length - 1; i >= 0; i--) {
-    reversedWord = reversedWord + word[i];
-  }
-
-  if (word === reversedWord) {
-    document.getElementById("result").innerText = word + " is a Palindrome ";
-  } else {
-    document.getElementById("result").innerText =
-      word + " is NOT a Palindrome ";
-  }
+  if (word === reversed)
+    document.getElementById("result").innerHTML = "Palindrome";
+  else
+    document.getElementById("result").innerHTML = "Not Palindrome";
 }
-    

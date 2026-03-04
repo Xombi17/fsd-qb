@@ -1,22 +1,19 @@
-function press(value) {
-    document.getElementById("display").value += value;
+function add() {
+    document.getElementById("result").innerHTML =
+        Number(document.getElementById("a").value) + Number(document.getElementById("b").value);
 }
 
-function calculate() {
-    let exp = document.getElementById("display").value;
-
-    if (exp === "") {
-        return;
-    }
-
-    try {
-        let ans = eval(exp);
-        document.getElementById("display").value = ans;
-    } catch (e) {
-        document.getElementById("display").value = "Error";
-    }
+function sub() {
+    document.getElementById("result").innerHTML =
+        document.getElementById("a").value - document.getElementById("b").value;
 }
 
-function clearDisplay() {
-    document.getElementById("display").value = "";
+function mul() {
+    document.getElementById("result").innerHTML =
+        document.getElementById("a").value * document.getElementById("b").value;
+}
+
+function div() {
+    document.getElementById("result").innerHTML =
+        document.getElementById("a").value / document.getElementById("b").value;
 }

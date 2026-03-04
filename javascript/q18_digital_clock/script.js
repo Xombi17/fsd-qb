@@ -1,11 +1,12 @@
-function updateClock() {
-    let now = new Date();
-    let h = String(now.getHours()).padStart(2, "0");
-    let m = String(now.getMinutes()).padStart(2, "0");
-    let s = String(now.getSeconds()).padStart(2, "0");
+function showTime() {
+    let d = new Date();
 
-    document.getElementById("clock").textContent = h + ":" + m + ":" + s;
+    let h = d.getHours();
+    let m = d.getMinutes();
+    let s = d.getSeconds();
+
+    document.getElementById("clock").innerHTML = h + ":" + m + ":" + s;
 }
 
-updateClock();
-setInterval(updateClock, 1000);
+showTime();
+setInterval(showTime, 1000);
